@@ -1,14 +1,19 @@
 class Clock:
     """A simple clock written in python"""
-    def __init__(self):pass;
+    def __init__(self):
+        pass;
+        # start clock
+        # print time every second
+        # check for alarm every interval
+    def newAlarm():
+        pass;
+        # use Alarm object
+    def deleteAlarm():pass;
+    def getAlarm():pass;
 
-    def newAlarm(User,Alarm):pass;
-    def deleteAlarm(User,Alarm):pass;
-    def getAlarms(User):pass;
-
-    def newUser(User):pass;
-    def deleteUser(User):pass;
-    def getUser(User):pass;
+    def newUser():pass;
+    def deleteUser():pass;
+    def getUser():pass;
 
 class Date:
     """ A simple date obj interface {hour,minute,second} """
