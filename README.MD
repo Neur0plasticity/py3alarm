@@ -24,10 +24,20 @@ version 0)
     * code is now dividable/taskable to team members
     * design mistakes are easily fixable
     * makes opensource module research easier
+    * allows clear contemplation of how to organize functions
 
 version 1)
-    * highlevel
+    * documented modules requirements
+    * allows code reviewers to modify requirements/interfaces b4 to late
 
+version 2) 
+    * methods & properties outlined
+
+version 3)
+
+version 4)
+
+version 5)
 
 
 
