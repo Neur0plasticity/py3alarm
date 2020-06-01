@@ -134,12 +134,37 @@ class User:
         # false:   raise error
 
 
-def printMSG():pass;
-def check():pass;
-def exist():pass;
-def find():pass;
-def delet():pass;
-def new():pass;
-def merge():pass;
-def empty():pass;
+def printMSG(msg):
+    print(msg)
+def exist(where,what):
+    return what in where
+def find(where,what,onNone,onFound):
+    r = what in where
+    if r == False:  return onNone()
+    elif r == True: return onFound(where[what])
+    else raise Exception("unhandled expection")
+
+def delet(obj,key):
+    r = what in where
+    if r == False:  raise Exception("obj key not found")
+    elif r == True: del obj[key]
+    else raise Exception("unhandled exception")
+
+def new(where,what,obj):
+    r = what in where;
+    if r == True:   raise Exception("where what exists")
+    elif r == False: return where[what] = obj
+    else raise Exception("unhandled exception")
+def merge(c,a,b):
+    # no defense against overwriting a key
+    for k in a:
+        c[k] = a[k]
+    for k in b:
+        c[k] = b[k]
+    return c
+def empty(str):
+    r = len(str)
+    if r == 0: return True
+    elif r > 0: return False
+    else raise Exception("unhandled exception")
     
