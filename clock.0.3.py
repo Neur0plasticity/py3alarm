@@ -102,7 +102,7 @@ class Alarm:
         # check args
 
     @staticmethod
-    def checkDateOBJ(dataOBJ):
+    def checkDateOBJ(dateOBJ):
         pass;
         # 23 >= hour >= 0
         # true:     return hour
