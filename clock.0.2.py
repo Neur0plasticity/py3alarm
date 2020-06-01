@@ -41,7 +41,7 @@ class Alarm:
     def __init__(self,dateOBJ,timeOBJ):pass;
 
     @staticmethod
-    def checkDateOBJ(dataOBJ):pass;
+    def checkDateOBJ(dateOBJ):pass;
 
     @staticmethod
     def checkTimeOBJ(timeOBJ):pass;

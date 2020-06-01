@@ -55,11 +55,22 @@ EXPLANATIONS
         * great time to catch bugs before final implementation
         * imperative patterns easily recognizable
 
-
-
     version 0.4)
+        * reusable core functions identified
+        * little to no code required to fill in imperatives
+        * everything is easily readable
 
     version 0.5)
+        * resuable core functions programmed
+
+    version 0.6)
+        * finished writing code
+
+
+    version 0.7) 
+        * wrote basic e2e (end to end) tests for application
+        * wrote basic e2e tests for application
+
 
 
 
