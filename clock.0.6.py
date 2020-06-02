@@ -102,19 +102,26 @@ class Time:
 class Alarm:
     """ A simple alarm object interface {dateOBJ,timeOBJ} """
     def __init__(self,dateOBJ,timeOBJ):
-        pass;
-        # mirror params to self
-        # check args
+        self.dateOBJ = Alarm.checkDateOBJ(dateOBJ)
+        self.timeOBJ = Alarm.checkTimeOBJ(timeOBJ)
 
     @staticmethod
     def checkDateOBJ(dateOBJ):
-        pass;
-        # 23 >= hour >= 0
-        # true:     return hour
-        # false:    raise error
+        a = "month" in dateOBJ
+        b = "day"   in dateOBJ
+        c = "year"  in dateOBJ
+        
+        if (a && b && c) return dateOBJ
+        else raise Exception("unhandled exception")
 
     @staticmethod
-    def checkTimeOBJ(timeOBJ):pass;
+    def checkTimeOBJ(timeOBJ):
+        a = "hour"      in dateOBJ
+        b = "minute"    in dateOBJ
+        c = "second"    in dateOBJ
+        
+        if (a && b && c) return timeOBJ
+        else raise Exception("unhandled exception")
 
 
 class User:
