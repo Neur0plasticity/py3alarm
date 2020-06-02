@@ -1,3 +1,5 @@
+import datetime
+now = datetime.datetime.now
 class Clock:
     """A simple clock written in python"""
     def __init__(self):
@@ -46,30 +48,29 @@ class Clock:
 class Date:
     """ A simple date obj interface {hour,minute,second} """
     def __init__(self,month,day,year):
-        pass;
-        # mirror params to self
-
+        self.month  = Date.checkMonth(month)
+        self.day    = Date.checkDay(day)
+        self.year   = Date.checkYear(year)
 
     @staticmethod
 	def checkMonth(month):
-        pass;
-        # 12 >= month >= 1
-        # true: return month;
-        # false: raise error
+        a = month < 13
+        b = month > 0
+        if (a && b) return month
+        else        raise Exception("unhandled exception")
 
 	@staticmethod
 	def checkDay(day):
-        pass;
-        # 31 >= day >= 1   # pretend all months have 31 days
-        # true: return month;
-        # false: raise error
+        a = day < 32
+        b = day > 0
+        if (a && b) return day
+        else        raise Exception("unhandled exception")
 
 	@staticmethod
 	def checkYear(year):
-        pass;
-        # year >= actual year
-        # true:     return year
-        # false:    raise error
+        a = year >= now().year
+        if (a) return year
+        else   raise Exception("unhandled exception")
 
 class Time:
     """ A simple time obj interface {hour,minute,second}"""
