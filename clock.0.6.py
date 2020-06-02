@@ -11,7 +11,7 @@ class Clock:
             print(now.second())
         setInterval(1000, printNow)
         # currently does not check for bugs
-        
+
     def newAlarm(User,Alarm):
         r = exist(Clock.users,User.name)
         if r == False:  raise Exception("unhandled exception")
@@ -80,15 +80,6 @@ class setInterval :
 
     def cancel(self) :
         self.stopEvent.set()
-
-
-
-
-
-
-
-
-
 
 class Date:
     """ A simple date obj interface {hour,minute,second} """
