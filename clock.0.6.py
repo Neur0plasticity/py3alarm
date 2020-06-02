@@ -74,30 +74,30 @@ class Date:
 class Time:
     """ A simple time obj interface {hour,minute,second}"""
     def __init__(self,hour,minute,second):
-        pass;
-        # mirror params to self
-        # check args
+        self.hour   = Time.checkHour(hour)
+        self.minute = Time.checkMinute(minute)
+        self.second = Time.checkSecond(second)
 
     @staticmethod
 	def checkHour(hour):
-        pass;
-        # 23 >= hour >= 0
-        # true:     return hour
-        # false:    raise error
+        a = hour < 24
+        b = hour >= 0
+        if (a && b) return hour
+        else        raise Exception("unhandled exception")
 
 	@staticmethod
 	def checkMinute(minute):
-        pass;
-        # 23 >= minute >= 0
-        # true:     return minute
-        # false:    raise error
+        a = minute < 60
+        b = minute >= 0
+        if (a && b) return minute
+        else        raise Exception("unhandled exception")
 
 	@staticmethod
 	def checkSecond(second):
-        pass;
-        # 59 >= second >= 0
-        # true:     return second
-        # false:    raise error
+        a = second< 60
+        b = second >= 0
+        if (a && b) return second
+        else        raise Exception("unhandled exception")
 
 class Alarm:
     """ A simple alarm object interface {dateOBJ,timeOBJ} """
