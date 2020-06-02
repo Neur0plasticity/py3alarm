@@ -5,12 +5,14 @@ class Clock:
         # start clock
         # print time every second
         # check for alarm every interval
+
     def newAlarm(User,Alarm):
         pass;
         # use User Class
         # no duplicate users
         # use Alarm Class
         # merge-store/zipOBJ User & Alarm
+
     def deleteAlarm(User,Alarm):
         pass;
         # find alarm
@@ -28,11 +30,13 @@ class Clock:
         # use User class
         # exist-user:   create
         # user exist:   report error
+
     def deleteUser(User):
         pass;
         # find user
         # exist-user    : delete user
         # !exist-user   : report error
+
     def getUser(User):
         pass;
         # find user
@@ -116,29 +120,29 @@ class Alarm:
 class User:
     """ A simple user object interface {username,password} """
     def __init__(self,username,password):
-        pass;
-        # mirror params to self
-        # check args
+        self.username = User.checkUsername(username)
+        self.password = User.checkPassword(password)
 
     @staticmethod
     def checkUsername(username):
-        pass;
-        # notEmpty-username:
-        # true:    return username
-        # false:   raise error
+        r = empty(username)
+        if (r == True) raise Exception("")
+        elif (r === false) return username
+        else            raise Exception("unhandled execption")
 
     @staticmethod
     def checkPassword(password):
-        pass;
-        # notEmpty-username:
-        # true:    return username
-        # false:   raise error
-
+        r = empty(password)
+        if (r == True) raise Exception("")
+        elif (r === false) return password
+        else           raise Exception("unhandled execption")
 
 def printMSG(msg):
     print(msg)
+
 def exist(where,what):
     return what in where
+
 def find(where,what,onNone,onFound):
     r = what in where
     if r == False:  return onNone()
@@ -156,6 +160,7 @@ def new(where,what,obj):
     if r == True:   raise Exception("where what exists")
     elif r == False: return where[what] = obj
     else raise Exception("unhandled exception")
+
 def merge(c,a,b):
     # no defense against overwriting a key
     for k in a:
@@ -163,6 +168,7 @@ def merge(c,a,b):
     for k in b:
         c[k] = b[k]
     return c
+
 def empty(str):
     r = len(str)
     if r == 0: return True
