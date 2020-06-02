@@ -1,49 +1,94 @@
 import datetime
+import time, threading
 now = datetime.datetime.now
 class Clock:
     """A simple clock written in python"""
+    cnt = 0
+    obj = {}
+    users = {}
     def __init__(self):
-        pass;
-        # start clock
-        # print time every second
-        # check for alarm every interval
-
+        def printNow:
+            print(now.second())
+        setInterval(1000, printNow)
+        # currently does not check for bugs
+        
     def newAlarm(User,Alarm):
-        pass;
-        # use User Class
-        # no duplicate users
-        # use Alarm Class
-        # merge-store/zipOBJ User & Alarm
+        r = exist(Clock.users,User.name)
+        if r == False:  raise Exception("unhandled exception")
+        r = Clock.users[User.name]["password"] == User.password
+        if r == False:  raise Exception("unhandled exception")
+        Clock.obj[Clock.cnt++] = Alarm;
+        return cnt - 1
 
-    def deleteAlarm(User,Alarm):
-        pass;
-        # find alarm
-        # exist-alarm   delete alarm
-        # !exist:       report error
+    def deleteAlarm(cnt,User,Alarm):
+        r = exist(Clock.users,User.name)
+        if r == False:  raise Exception("unhandled exception")
+        r = Clock.users[User.name]["password"] == User.password
+        if r == False:  raise Exception("unhandled exception")
+        r = exist(Clock.obj,cnt)
+        if r == False:  raise Exception("unhandled exception")
+        return delet(Clock.obj,cnt)
 
     def getAlarms(User):
-        pass;
-        # find alarms matching user
-        # exist-alarmuser:  print found alarms
-        # !exist-alarmuser: report error
+        r = exist(Clock.users,User.name)
+        if r == False:  raise Exception("unhandled exception")
+        r = Clock.users[User.name]["password"] == User.password
+        if r == False:  raise Exception("unhandled exception")
+        alarms = {}
+        for k in Clock.obj:
+            if Clock.obj[k]["name"] = User.name:
+                alarms[k] = Clock.obj[k]
+        return alarms
 
     def newUser(User):
         pass;
-        # use User class
-        # exist-user:   create
-        # user exist:   report error
-
+        a = exist(Clock.user,User.name)
+        if a :  Clock.user[User.name] = User;
+        else raise Exception("unhandled exception")
+    
     def deleteUser(User):
         pass;
-        # find user
-        # exist-user    : delete user
-        # !exist-user   : report error
+        find(Clock.user,User.name,
+            lambda a: raise Exception("unhandled exception")
+            lambda b: delet(Clock.user,User.name)
+        )
 
     def getUser(User):
         pass;
-        # find user
-        # exist-user    : print user
-        # !exist-user   : report error
+        return find(Clock.user,User.name,
+            lambda a: raise Exception("unhandled exception"),
+            lambda b: Clock.user[User.name]
+        )
+
+
+
+
+
+class setInterval :
+    def __init__(self,interval,action) :
+        self.interval=interval
+        self.action=action
+        self.stopEvent=threading.Event()
+        thread=threading.Thread(target=self.__setInterval)
+        thread.start()
+
+    def __setInterval(self) :
+        nextTime=time.time()+self.interval
+        while not self.stopEvent.wait(nextTime-time.time()) :
+            nextTime+=self.interval
+            self.action()
+
+    def cancel(self) :
+        self.stopEvent.set()
+
+
+
+
+
+
+
+
+
 
 class Date:
     """ A simple date obj interface {hour,minute,second} """
